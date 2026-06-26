@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Gilbert Mungai</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 60px 40px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .page-header h1 {
+            color: #fff;
+        }
+
+        .page-header h1 span {
+            color: var(--color-primary);
+        }
+
+        .page-header p {
+            color: var(--color-muted);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        /* Desktop: sidebar + form */
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1.6fr;
+            }
+        }
+
+        /* LEFT INFO */
+        .contact-info h2,
+        .social-links h2 {
+            color: var(--color-primary);
+            border-left: 4px solid var(--color-primary);
+            padding-left: 10px;
+            font-size: var(--font-lg);
+            margin-bottom: 16px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h3 {
+            font-size: var(--font-xs);
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info-item p,
+        .info-item a {
+            font-size: var(--font-sm);
+            color: #ccc;
+        }
+
+        .info-item a:hover {
+            color: var(--color-primary);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-links ul li a {
+            font-size: var(--font-sm);
+            color: #ccc;
+        }
+
+        .social-links ul li a:hover {
+            color: var(--color-primary);
+        }
+
+        /* FORM */
+        .contact-form h2 {
+            color: var(--color-primary);
+            border-left: 4px solid var(--color-primary);
+            padding-left: 10px;
+            font-size: var(--font-lg);
+            margin-bottom: 24px;
+        }
+
+        fieldset {
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: var(--color-primary);
+            font-size: var(--font-xs);
+            font-weight: 600;
+            padding: 0 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: var(--font-sm);
+            color: var(--color-muted);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: var(--color-text);
+            font-size: var(--font-sm);
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        input:invalid,
+        textarea:invalid {
+            border-color: #e74c3c;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        select option {
+            background-color: #1a1a1a;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--color-primary);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-size: var(--font-sm);
+            color: #ccc;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: var(--color-primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: var(--font-base);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button[type="submit"]:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 40px 20px 30px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GM.</div>
+        <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Get In <span>Touch</span></h1>
+        <p>Let's connect — I'm open to collaborations, questions, and opportunities</p>
+    </div>
+
+    <main>
+
+        <aside>
+            <div class="contact-info">
+                <h2>Contact Info</h2>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <a href="mailto:dream333wxrld@gmail.com">dream333wxrld@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+254110911799">+254 110 911 799</a>
+                </div>
+                <div class="info-item">
+                    <h3>Location</h3>
+                    <p>Nairobi, Kenya</p>
+                </div>
+                <div class="info-item">
+                    <h3>Timezone</h3>
+                    <p>East Africa Time (EAT) — UTC+3</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h2>Social Media</h2>
+                <ul>
+                    <li><a href="https://github.com/dream333wxrld-juice" target="_blank">🐙 GitHub — dream333wxrld-juice</a></li>
+                    <li><a href="#">💼 LinkedIn</a></li>
+                    <li><a href="#">🐦 Twitter / X</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="contact-form">
+            <h2>Send a Message</h2>
+
+            <fieldset>
+                <legend>Your Details</legend>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="e.g. Jane Doe"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="e.g. jane@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (optional)</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="e.g. +254 700 000 000"
+                    >
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Message</legend>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="collaboration">Collaboration / Project</option>
+                        <option value="freelance">Freelance Work</option>
+                        <option value="general">General Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message * (min. 50 characters)</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required
+                        minlength="50"
+                    ></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to my newsletter for updates</label>
+                </div>
+            </fieldset>
+
+            <button type="submit">Send Message</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Gilbert Mungai</h3>
+                <p>Web Developer & Entrepreneur based in Nairobi, Kenya.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:dream333wxrld@gmail.com">dream333wxrld@gmail.com</a></li>
+                    <li><a href="tel:+254110911799">+254 110 911 799</a></li>
+                    <li><p>Nairobi, Kenya · EAT (UTC+3)</p></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Social</h3>
+                <ul>
+                    <li><a href="https://github.com/dream333wxrld-juice" target="_blank">🐙 GitHub</a></li>
+                    <li><a href="#">💼 LinkedIn</a></li>
+                    <li><a href="#">🐦 Twitter / X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gilbert Mungai. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
