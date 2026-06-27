@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilbert Mungai - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            color: #fff;
+        }
+
+        .hero-content h1 span {
+            color: var(--color-primary);
+        }
+
+        .hero-content p.tagline {
+            font-size: var(--font-lg);
+            color: var(--color-muted);
+            margin-bottom: 16px;
+        }
+
+        .hero-content p.intro {
+            color: #ccc;
+            margin-bottom: 36px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* CARDS SECTION */
+        .section {
+            padding: 60px 40px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .card-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .quick-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 30px 24px;
+            width: 220px;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .quick-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .quick-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .quick-card h3 {
+            color: #fff;
+            font-size: var(--font-lg);
+            margin-bottom: 8px;
+        }
+
+        .quick-card p {
+            font-size: var(--font-sm);
+            color: var(--color-muted);
+            margin-bottom: 16px;
+        }
+
+        .quick-card a {
+            font-size: var(--font-sm);
+            font-weight: 600;
+        }
+
+        @media (max-width: 767px) {
+            .section { padding: 40px 20px; }
+            .hero-content h1 { font-size: var(--font-3xl); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GM.</div>
+        <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Gilbert Mungai</span></h1>
+            <p class="tagline">Web Developer · Entrepreneur · Problem Solver</p>
+            <p class="intro">
+                I'm a web development student at IYF Weekend Academy, building practical tools
+                and real-world projects. I also run Icon Auto Spare — an auto parts business
+                in Nairobi's Industrial Area.
+            </p>
+            <div class="btn-group">
+                <a href="projects.html" class="btn btn-primary">View My Projects</a>
+                <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Explore My Portfolio</h2>
+        <div class="card-row">
+            <div class="quick-card">
+                <div class="icon">👤</div>
+                <h3>About Me</h3>
+                <p>My background, skills, and journey into tech.</p>
+                <a href="about.html">Learn More →</a>
+            </div>
+            <div class="quick-card">
+                <div class="icon">💻</div>
+                <h3>Projects</h3>
+                <p>Web apps and tools I've built.</p>
+                <a href="projects.html">See Projects →</a>
+            </div>
+            <div class="quick-card">
+                <div class="icon">📬</div>
+                <h3>Contact</h3>
+                <p>Let's connect and work together.</p>
+                <a href="contact.html">Reach Out →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Gilbert Mungai</h3>
+                <p>Web Developer & Entrepreneur based in Nairobi, Kenya.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:dream333wxrld@gmail.com">dream333wxrld@gmail.com</a></li>
+                    <li><a href="tel:+254110911799">+254 110 911 799</a></li>
+                    <li><p>Nairobi, Kenya · EAT (UTC+3)</p></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Social</h3>
+                <ul>
+                    <li><a href="https://github.com/dream333wxrld-juice" target="_blank">🐙 GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/gilbertmungai" target="_blank">💼 LinkedIn</a></li>
+                    <li><a href="https://twitter.com/dream333wxrld" target="_blank">🐦 Twitter / X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gilbert Mungai. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
