@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 40px;
+        }
+
+        h2 {
+            color: var(--color-primary);
+            border-left: 4px solid var(--color-primary);
+            padding-left: 12px;
+            margin-bottom: 24px;
+            margin-top: 50px;
+        }
+
+        /* ================================
+           EXERCISE 1: Box Model Visualization
+        ================================ */
+        .box-container {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        /* Box 1 - Content only */
+        .box-content {
+            width: 150px;
+            height: 150px;
+            background-color: #ff6b35;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-sm);
+            font-weight: 600;
+        }
+
+        /* Box 2 - Padding */
+        .box-padding {
+            width: 150px;
+            height: 150px;
+            background-color: #1a1a2e;
+            border: 2px dashed #ff6b35;
+            padding: 20px;
+            color: #ff6b35;
+            font-size: var(--font-sm);
+            font-weight: 600;
+            box-sizing: content-box;
+        }
+
+        /* Box 3 - Border */
+        .box-border {
+            width: 150px;
+            height: 150px;
+            background-color: #111;
+            border: 6px solid #ff6b35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: var(--font-sm);
+            font-weight: 600;
+        }
+
+        /* Box 4 - Margin */
+        .box-margin-wrapper {
+            background-color: #1a1a1a;
+            display: inline-block;
+        }
+
+        .box-margin {
+            width: 150px;
+            height: 150px;
+            background-color: #ff6b35;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: var(--font-sm);
+            font-weight: 600;
+        }
+
+        /* ================================
+           EXERCISE 2: Debug the Layout
+        ================================ */
+        .debug-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .debug-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+        }
+
+        .debug-box h3 {
+            color: #fff;
+            font-size: var(--font-sm);
+            margin-bottom: 12px;
+        }
+
+        /* BROKEN - ends up 340px wide because
+           box-sizing defaults to content-box,
+           so padding adds to the width */
+        .broken-box {
+            width: 300px;
+            padding: 20px;
+            border: none;
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: var(--font-sm);
+            padding: 20px;
+            box-sizing: content-box;
+        }
+
+        /* FIXED - box-sizing: border-box makes
+           padding included in the 300px width */
+        .fixed-box {
+            width: 300px;
+            padding: 20px;
+            border: none;
+            background-color: #2ecc71;
+            color: #111;
+            font-size: var(--font-sm);
+            box-sizing: border-box;
+        }
+
+        .broken-box p,
+        .fixed-box p {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* ================================
+           EXERCISE 3: Card Component
+        ================================ */
+        .card-component {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 8px;
+            background-color: #111;
+            box-sizing: border-box;
+        }
+
+        .card-component img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .card-component h3 {
+            color: #fff;
+            font-size: var(--font-lg);
+            margin-bottom: 15px;
+        }
+
+        .card-component p {
+            color: var(--color-muted);
+            font-size: var(--font-sm);
+            margin-bottom: 16px;
+        }
+
+        .card-component .btn {
+            width: 100%;
+            text-align: center;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: var(--font-sm);
+            font-weight: 600;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-component .btn:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding: 20px;
+            }
+
+            .debug-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Box Model Practice</h1>
+
+    <!-- EXERCISE 1 -->
+    <h2>Exercise 1: Box Model Visualization</h2>
+    <div class="box-container">
+
+        <div>
+            <p style="color: var(--color-muted); font-size: var(--font-sm); margin-bottom: 8px;">Content</p>
+            <div class="box-content">Content</div>
+        </div>
+
+        <div>
+            <p style="color: var(--color-muted); font-size: var(--font-sm); margin-bottom: 8px;">Padding</p>
+            <div class="box-padding">Padding (20px)</div>
+        </div>
+
+        <div>
+            <p style="color: var(--color-muted); font-size: var(--font-sm); margin-bottom: 8px;">Border</p>
+            <div class="box-border">Border (6px)</div>
+        </div>
+
+        <div>
+            <p style="color: var(--color-muted); font-size: var(--font-sm); margin-bottom: 8px;">Margin</p>
+            <div class="box-margin-wrapper">
+                <div class="box-margin">Margin (20px)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EXERCISE 2 -->
+    <h2>Exercise 2: Debug the Layout</h2>
+    <div class="debug-container">
+
+        <div class="debug-box">
+            <h3>❌ Broken (340px wide)</h3>
+            <div class="broken-box">
+                <p>width: 300px + padding: 20px = 340px</p>
+                <p>box-sizing: content-box (default)</p>
+            </div>
+        </div>
+
+        <div class="debug-box">
+            <h3>✅ Fixed (300px wide)</h3>
+            <div class="fixed-box">
+                <p>width: 300px (padding included)</p>
+                <p>box-sizing: border-box (fix!)</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EXERCISE 3 -->
+    <h2>Exercise 3: Card Component</h2>
+    <div class="card-component">
+        <img src="https://placehold.co/300x160/1a1a2e/ff6b35?text=Project+Image" alt="Project Image">
+        <h3>Project Title</h3>
+        <p>A short description of the project goes here. This explains what it does and the tech used.</p>
+        <a href="#" class="btn">View Project</a>
+    </div>
+
+</body>
+</html>
